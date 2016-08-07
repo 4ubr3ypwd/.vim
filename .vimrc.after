@@ -1,0 +1,34 @@
+set list
+set autoindent
+set smartindent
+set cindent
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
+set noexpandtab
+set nowrap
+
+filetype indent plugin on
+
+" Update file on change.
+set autoread
+
+" Mouse Scroll
+set ttymouse=xterm2
+set mouse=a
+
+" ag Support
+let g:ackprg = 'ag --nogroup --nocolor --column'
+
+" Auto paste mode when Inset happens.
+let &t_SI .= "\<Esc>[?2004h"
+let &t_EI .= "\<Esc>[?2004l"
+inoremap <special> <expr> <Esc>[200~ XTermPasteBegin()
+function! XTermPasteBegin()
+  set pastetoggle=<Esc>[201~
+  set paste
+  return ""
+endfunction
+
+" Different number-toggle (don't override cursors)
+let g:NumberToggleTrigger="<C-g>"

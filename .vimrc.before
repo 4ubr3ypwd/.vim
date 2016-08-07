@@ -1,0 +1,20 @@
+" Comma is better.
+let mapleader=","
+
+" Map commenter to a leader command (because Command + \ fails).
+map <Leader>/ <plug>NERDCommenterComment
+
+" Paste mode
+nnoremap <Leader>p :set invpaste paste?<CR>
+set pastetoggle=<Leader>p
+set showmode
+
+" Better Escape
+vno v <esc>
+ino ii <esc>
+cno ii <c-c>
+
+" Easier exiting.
+nmap <leader>q :q!<cr>
+nmap <leader>w :w!<cr>
+nmap <leader>s :w!<cr>
